@@ -5,9 +5,9 @@ import Homecards from "./components/Homecards"
 const App = () => {
   return (
     <>
-       <Navbar />
-       <Hero title='Become a React Dev' subtitle='Find jobs that fits your skill set' />
-       <Homecards />
+      <Navbar />
+      <Hero title='Become a React Dev' subtitle='Find jobs that fits your skill set' />
+      <Homecards />
     </>
   )
 }
