@@ -1,5 +1,4 @@
-
-const Hero = ({title, subtitle}) => {
+const Hero = ({ title, subtitle }) => {
     return (
         <section className="bg-indigo-700 py-10 mb-4">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
