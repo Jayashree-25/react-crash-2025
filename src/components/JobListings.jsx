@@ -14,26 +14,26 @@ const jobListings = () => {
                         <div className='p-4'>
                             <div className='mb-6'>
                                 <div className='text-gray-600 my-2'>
-                                    Full Time
+                                    {job.type}
                                 </div>
                                 <h3 className='text-xl font-bold'>
-                                    Senior React Developer
+                                    {job.title}
                                 </h3>
                             </div>
 
                             <div>
-                                We are seeking a talented Front-End developer to join our team in Boston, MA.
+                                {job.description}
                             </div>
 
-                            <h3 className='text-indigo-500 mb-2'>$70 - $80K / Year</h3>
+                            <h3 className='text-indigo-500 mb-2'>{job.salary} / Year</h3>
 
                             <div className='border border-gray-100 mb-5'></div>
 
                             <div className='flex flex-col lg:flex-row justify-between mb-4'>
                                 <div className='text-orange-700 mb-3'>
-                                    <i className='fa-solid fa-location-dot text-lg'>Boston, MA</i>
+                                    <i className='fa-solid fa-location-dot text-lg'>{job.location}</i>
                                 </div>
-                                <a href="job.html" className='h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-l text-center text-sm'>Read More</a>
+                                <a href={`/job/${job.id}`} className='h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-l text-center text-sm'>Read More</a>
                             </div>
                         </div>
                     </div>
