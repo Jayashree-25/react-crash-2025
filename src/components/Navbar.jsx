@@ -12,13 +12,21 @@ const Navbar = () => {
                                 React Jobs
                             </span>
                         </a>
-                        <div className='md:ml-auto'>
-                            <div className='flex space-x-2'>
-                                <a href="/index.html">
-                                </a>
-                            </div>
-                        </div>
                     </div>
+
+                    {/* Right Section - Navigation Links */}
+                    <div className='hidden md:flex space-x-6'>
+                        <a href="/" className='text-white text-lg hover:text-gray-300'>
+                            Home
+                        </a>
+                        <a href="/jobs" className='text-white text-lg hover:text-gray-300'>
+                            Jobs
+                        </a>
+                        <a href="/add-job" className='text-white text-lg hover:text-gray-300'>
+                            Add Job
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </nav>
