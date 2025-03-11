@@ -1,7 +1,7 @@
-import jobs from '../jobs.json';
+import jobsData from '../jobs.json';
 import JobListing from './JobListing';
 const jobListings = ( {isHome = false} ) => {
-    const jobListings = isHome ? jobs.slice(0,3) : jobs;
+    const jobListings = isHome ? jobsData.slice(0,3) : jobsData.jobs;
 
     return (
         <section className='bg-blue-50 px-4 py-10'>
