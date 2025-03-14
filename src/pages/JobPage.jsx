@@ -16,7 +16,7 @@ const JobPage = ({ deleteJob }) => {
     if (!confirm) return;
 
     deleteJob(jobId);
-    toast.success('Job deleted successfully')
+    toast.success('Job Deleted Successfully');  //gives a effect after deletion of job
 
     navigate('/jobs');
 
