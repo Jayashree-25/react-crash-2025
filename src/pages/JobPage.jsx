@@ -1,12 +1,25 @@
 // import { useState, useEffect } from 'react';
-import { useParams, useLoaderData } from 'react-router-dom';
+import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaMapMarker } from 'react-icons/fa';
 
-const JobPage = () => {
+const JobPage = ({ deleteJob }) => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const job = useLoaderData();
+
+  const onDeleteClick = (jobId) => {
+    const confirm = window.confirm('Are you sure you want to delete this listings?')
+
+    if (!confirm) return;
+
+    deleteJob(jobId);
+    
+    navigate('/jobs');
+
+  }
+
   // const [job, setJob] = useState(null);
   // const [loading, setLoading] = useState(true);
 

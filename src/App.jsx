@@ -23,32 +23,43 @@ const App = () => {
       body: JSON.stringify(newJob)
     });
     return;
+  };
+
+  //DELETE JOB
+  const deleteJob = async (id) => {
+    const res = await fetch(`/api/jobs/${id}`, {
+      method: 'DELETE',
+    });
+    return;
   }
 
-    const router = createBrowserRouter(
-      createRoutesFromElements(
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path='/jobs' element={<JobsPage />} />
-          <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
-          <Route path='/jobs/:id' element={<JobPage />} loader={jobLoader} />
-          <Route path='*' element={<NotFoundPage />} />
-        </Route>
-      )
-    );
-
-    return (
-      <RouterProvider router={router} />
-      // (
-      //   <>
-      //     <Navbar />
-      // <Hero title='Become a React Dev' subtitle='Find jobs that fits your skill set' />
-      //     <Homecards />
-      //     <JobListings />
-      //     <ViewAllJobs />
-      //   </>
-      // )
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path='/jobs' element={<JobsPage />} />
+        <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
+        <Route
+          path='/jobs/:id'
+          element={<JobPage deleteJob={deleteJob} />}
+          loader={jobLoader} />
+        <Route path='*' element={<NotFoundPage />} />
+      </Route>
     )
-  }
+  );
 
-  export default App
+  return (
+    <RouterProvider router={router} />
+    // (
+    //   <>
+    //     <Navbar />
+    // <Hero title='Become a React Dev' subtitle='Find jobs that fits your skill set' />
+    //     <Homecards />
+    //     <JobListings />
+    //     <ViewAllJobs />
+    //   </>
+    // )
+  )
+}
+
+export default App
